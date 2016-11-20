@@ -6,7 +6,14 @@
                 <row>
                     <div class="col s12">
                         <div class="card">
-                            <loader />
+                            <div class="card-content">
+                                <loader v-if="!done" />
+                                <div class="card-title" v-if="done">
+                                    {{ name }}
+                                    <small>{{ author}}</small>
+                                </div>
+                                <div v-if="done" v-html="abstract"></div>
+                            </div>
                         </div>
                     </div>
                 </row>
@@ -20,7 +27,9 @@
       return {
         name: 'Foo',
         author: 'Bar',
-        id: 'foo'
+        id: 'foo',
+        done: false,
+        abstract: '<strong>Testing</strong>'
       }
     },
     computed: {
@@ -34,8 +43,8 @@
     },
     mounted() {
       setTimeout(() => {
-
-      }, 100);
+        this.done = true;
+      }, 1000);
     }
   }
 </script>
