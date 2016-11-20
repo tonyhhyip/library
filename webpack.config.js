@@ -26,7 +26,7 @@ module.exports = {
     filename: '[name].js'
   },
   resolve: {
-    extensions: ['', '.js', '.vue'],
+    extensions: ['', '.json', '.js', '.vue'],
     fallback: ['node_modules']
   },
   resolveLoader: {
@@ -43,6 +43,10 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel'
+      },
+      {
+        test: /\.json$/,
+        loader: 'json'
       }
     ]
   },

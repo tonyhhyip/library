@@ -1,0 +1,6 @@
+{
+  "intro": [
+    {"name": "aim", "display": "Aim"},
+    {"name": "rule", "display": "Rule"}
+  ]
+}
