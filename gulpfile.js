@@ -41,17 +41,15 @@ gulp.task('css', () => {
 
 gulp.task('page', () => {
   const env = new Environment([
-    new FileSystemLoader('./assets/pages', {
-      watch: true
-    }),
-    new FileSystemLoader('./assets/layouts', {
-      watch: true
-    })
+    new FileSystemLoader('assets/pages', {watch: true}),
+    new FileSystemLoader('assets/layouts', {watch: true})
   ]);
-  return gulp.src('./assets/pages/*.jinja')
+  return gulp.src('./assets/pages/**/*.jinja')
     .pipe(jinja.compile({}, {env}))
     .on('error', log)
-    .pipe(htmlmin())
+    .pipe(htmlmin({
+      collapseWhitespace: true
+    }))
     .pipe(rename({
       extname: '.html'
     }))
@@ -95,7 +93,7 @@ gulp.task('js', (cb) => {
     if (e) {
       throw new webpack.PluginError('[webpack]', e);
     } else {
-      util.log('[webpack]', stats.toString({
+      log('[webpack]', stats.toString({
         version: true,
         timings: true,
         assets: true,
