@@ -61,7 +61,6 @@ gulp.task('server', () => {
     entry: {
       app: [
         'webpack-dev-server/client?http://localhost:8080/',
-        'webpack/hot/dev-server',
         './assets/js/app'
       ]
     }
@@ -86,6 +85,34 @@ gulp.task('server', () => {
   });
 
   server.listen(8080);
+});
+
+gulp.task('js:dev', (cb) => {
+  const devConfig = merge(config, {
+    entry: {
+      app: [
+        'webpack-dev-server/client?http://localhost:8080/',
+        './assets/js/app'
+      ]
+    }
+  });
+
+  webpack(devConfig, (e, stats) => {
+    if (e) {
+      throw new webpack.PluginError('[webpack]', e);
+    } else {
+      log('[webpack]', stats.toString({
+        version: true,
+        timings: true,
+        assets: true,
+        chunks: true,
+        chunkModules: true,
+        modules: true
+      }));
+      fs.writeFile('./webpack.json', JSON.stringify(stats.toJson('verbose')));
+    }
+    cb();
+  });
 });
 
 gulp.task('js', (cb) => {
@@ -125,7 +152,14 @@ gulp.task('watch:image', () => {
   ], ['image']);
 });
 
-gulp.task('watch', ['watch:image', 'watch:page', 'watch:css']);
+gulp.task('watch:js', () => {
+  return gulp.watch([
+    './assets/js/**/*.js',
+    './assets/js/**/*.vue'
+  ], ['js:dev']);
+});
+
+gulp.task('watch', ['watch:image', 'watch:page', 'watch:css', 'watch:js']);
 gulp.task('build:dev', ['image', 'css', 'page', 'server']);
 gulp.task('dev', ['build:dev', 'watch']);
 gulp.task('build', ['image', 'css', 'page', 'js']);
