@@ -10,8 +10,11 @@ module.exports = {
     new OccurenceOrderPlugin(),
     new DedupePlugin()
   ],
-  external: {
-
+  externals: {
+    vue: 'Vue',
+    'vue-resource': 'VueResource',
+    'vue-router': 'VueRouter',
+    marked: 'marked'
   },
   devtool: 'source-map',
   entry: {
@@ -23,7 +26,7 @@ module.exports = {
     filename: '[name].js'
   },
   resolve: {
-    extensions: ['', '.js'],
+    extensions: ['', '.js', '.vue'],
     fallback: ['node_modules']
   },
   resolveLoader: {
@@ -31,14 +34,21 @@ module.exports = {
   },
   module: {
     loaders: [
+
+      {
+        test: /\.vue$/,
+        loader: 'vue',
+        exclude: /node_modules/
+      },
       {
         test: /\.js$/,
         loader: 'babel'
-      },
-      {
-        test: /\.vue$/,
-        loader: 'vue'
       }
     ]
+  },
+  vue: {
+    loaders: {
+      js: 'babel'
+    }
   }
 };
