@@ -6,7 +6,7 @@
             <h1>SPYC Library</h1>
             <h2 v-if="title">{{ title }}</h2>
             </div>
-            <div class="parallax"><img src="/images/cover.jpg"></div>
+            <div class="parallax"><img :src="src"></div>
         </div>
     </header>
 </template>
@@ -16,6 +16,11 @@
     props: ['title'],
     components:{
       Navbar
+    },
+    data() {
+      return {
+        src: './images/cover.jpg'
+      }
     },
     mounted: function () {
       $('.parallax').parallax();
