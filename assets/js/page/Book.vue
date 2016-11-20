@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Header :title="title" />
+        <Header title="Book Recommend" />
         <main>
             <container>
                 <row>
@@ -8,11 +8,8 @@
                         <div class="card">
                             <div class="card-content">
                                 <loader v-if="!done" />
-                                <div class="card-title" v-if="done">
-                                    {{ name }}
-                                    <small>{{ author}}</small>
-                                </div>
-                                <div v-if="done" v-html="abstract"></div>
+                                <div class="card-title" v-if="done">{{ title }}</div>
+                                <div v-html="content" v-if="done"></div>
                             </div>
                         </div>
                     </div>
@@ -22,18 +19,14 @@
     </div>
 </template>
 <script>
+  import loader from '../loader';
   export default{
     data(){
       return {
-        name: 'Foo',
-        author: 'Bar',
-        id: 'foo',
         done: false,
-        abstract: '<strong>Testing</strong>'
+        content: '',
+        title: ''
       }
-    },
-    computed: {
-      title() {return `Book Recommend - ${this.name}` }
     },
     components: {
       Header: require('../component/Header.vue'),
@@ -42,9 +35,8 @@
       loader: require('../component/Loader.vue')
     },
     mounted() {
-      setTimeout(() => {
-        this.done = true;
-      }, 1000);
+      const url = `https://spyc.github.io/library-data/books/${this.$route.params.id}.txt`;
+      loader(url, this);
     }
   }
 </script>

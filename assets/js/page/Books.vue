@@ -11,10 +11,10 @@
                                 <h4>{{ language }}</h4>
                             </li>
                             <li v-for="book in list" class="collection-item">
-                                <div>
-                                    {{  book.name }}
-                                    <small>{{ book.author }}</small>
-                                    <router-link :to="{name: 'book', params:{id:book.id}}" class="secondary-content">
+                                <div v-if="book.ID">
+                                    {{  book.Title }}
+                                    <small>{{ book.Author }}</small>
+                                    <router-link :to="{name: 'book', params:{id:book.ID}}" class="secondary-content">
                                         <i class="material-icons">send</i>
                                     </router-link>
                                 </div>
@@ -27,16 +27,27 @@
     </div>
 </template>
 <script>
+  import parser from '../parser';
   export default{
     data(){
-      // TODO: use vue resource to load for this
       return {
         done: false,
-        books: {
-          Chinese: [
-            {name: 'Foo', author: 'Bar', id: 'foo'}
-          ]
+        eng: null,
+        chin: null
+      }
+    },
+    computed: {
+      books() {
+        const obj = {};
+        if (this.chin) {
+          obj.Chinese = this.chin;
         }
+
+        if (this.eng) {
+          obj.English = this.eng;
+        }
+
+        return obj;
       }
     },
     components: {
@@ -46,7 +57,22 @@
       loader: require('../component/Loader.vue')
     },
     mounted() {
-      setTimeout(() => this.done = true, 1000);
+      const lists = {
+        eng: 'https://spyc.github.io/library-data/english.txt',
+        chin: 'https://spyc.github.io/library-data/chinese.txt'
+      };
+      const self = this;
+      for (let language in lists) {
+        const file = lists[language];
+        self.$http.get(file)
+          .then(function (response) {
+            self.done = true;
+            return response.text();
+          })
+          .then(function (content) {
+            self[language] = parser(content);
+          });
+      }
     }
   }
 </script>
