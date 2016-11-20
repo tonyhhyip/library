@@ -1,0 +1,10 @@
+.card {
+  ul > li {
+    list-style-type: disc;
+  }
+  ol > li, ul > li {
+    > ol, > ul {
+      margin-left: 10px;
+    }
+  }
+}
