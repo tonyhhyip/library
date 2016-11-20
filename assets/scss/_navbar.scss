@@ -1,3 +1,9 @@
 nav .tabs a.active {
   border-bottom: 3px solid white;
 }
+
+@media #{$medium-and-down} {
+  nav.nav-extended {
+    height: 56px;
+  }
+}
