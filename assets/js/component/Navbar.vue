@@ -19,9 +19,31 @@
             </ul>
             <ul class="side-nav" id="side-nav">
                 <li>
-                    <router-link :to="{name: 'intro'}">
-                        Introduction
+                    <router-link :to="{name: 'home'}">
+                        <i class="material-icons">home</i>
+                        Home
                     </router-link>
+                </li>
+                <li class="no-padding">
+                    <ul class="collapsible collapsible-accordion">
+                        <li>
+                            <a class="collapsible-header">Introduction <i class="material-icons">arrow_drop_down</i></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li>
+                                        <router-link :to="{name: 'intro', params: {section: 'aim'}}">
+                                            Aim
+                                        </router-link>
+                                    </li>
+                                    <li>
+                                        <router-link :to="{name: 'intro', params: {section: 'rule'}}">
+                                            Rule
+                                        </router-link>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
                 </li>
                 <li>
                     <router-link :to="{name: 'books'}">
@@ -54,7 +76,7 @@
       $(".button-collapse").sideNav();
       $('.collapsible').collapsible();
       const $side = $(document.getElementById('side-nav'));
-      $side.delegate('li a', 'click', () => $side.sideNav('hide'));
+      $side.delegate('li a:not(.collapsible-header)', 'click', () => $side.sideNav('hide'));
     }
   }
 </script>
