@@ -18,6 +18,21 @@ module.exports = {
       component: require('./page/Book.vue')
     },
     {
+      path: '/intro/:section',
+      name: 'intro',
+      component: require('./page/About.vue'),
+      children: [
+        {
+          path: 'aim',
+          component: require('./page/introduction/Aim.vue')
+        },
+        {
+          path: 'rule',
+          component: require('./page/introduction/Rule.vue')
+        }
+      ]
+    },
+    {
       path: '*',
       component: require('./page/Home.vue')
     }
