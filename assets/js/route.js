@@ -18,23 +18,29 @@ module.exports = {
       component: require('./page/Book.vue')
     },
     {
-      path: '/intro/:section',
+      path: '/intro',
       name: 'intro',
       component: require('./page/About.vue'),
       children: [
         {
           path: 'aim',
+          name: 'aim',
           component: require('./page/introduction/Aim.vue')
         },
         {
           path: 'rule',
+          name: 'rule',
           component: require('./page/introduction/Rule.vue')
+        },
+        {
+          path: '*',
+          redirect: {name: 'aim'}
         }
       ]
     },
     {
       path: '*',
-      component: require('./page/Home.vue')
+      redirect: {name: 'home'}
     }
   ]
 };

@@ -1,6 +1,9 @@
 <template>
     <div>
-        <Header title="About Us" />
+        <Header :title="title" />
+        <main class="container">
+            <router-view></router-view>
+        </main>
     </div>
 </template>
 <style>
@@ -10,6 +13,15 @@
   export default{
     components: {
       Header: require('../component/Header.vue')
+    },
+    computed: {
+      title() {
+        const name = {
+          aim: 'Aim',
+          rule: 'Rule'
+        };
+        return `About Us - ${name[this.$route.path.replace('/intro/', '')]}`
+      }
     }
   }
 </script>
