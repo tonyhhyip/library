@@ -13,4 +13,10 @@ Vue.use(VueResource);
 
 const router = new VueRouter(require('./route'));
 
-new Vue({router}).$mount('#app');
+new Vue({
+  router,
+  mounted() {
+    const loader = document.getElementById('page-loader');
+    loader.parentNode.removeChild(loader);
+  }
+}).$mount('#app');
