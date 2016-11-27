@@ -20,8 +20,19 @@ module.exports = {
     {
       path: '/intro/:section',
       name: 'intro',
-      component: require('./page/About.vue'),
-      canReuse: false
+      component: require('./page/About.vue')
+    },
+    {
+      path: '/suggestion',
+      name: 'suggest',
+      component: require('./page/Suggestion.vue'),
+      children: [
+        {
+          path: 'purchase',
+          component: require('./page/Purchase.vue'),
+          name: 'purchase'
+        }
+      ]
     },
     {
       path: '*',

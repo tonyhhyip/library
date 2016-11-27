@@ -16,6 +16,11 @@
                         Book Recommend
                     </router-link>
                 </li>
+                <li>
+                    <router-link :to="{name: 'purchase'}">
+                        Suggestion
+                    </router-link>
+                </li>
             </ul>
             <ul class="side-nav" id="side-nav">
                 <li>
