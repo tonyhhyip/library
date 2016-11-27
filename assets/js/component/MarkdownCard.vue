@@ -1,6 +1,6 @@
 <template>
     <div class="card">
-        <div class="card-content">
+        <div class="card-content markdown">
             <loader v-if="!done" />
             <div class="card-title" v-if="done">{{ title }}</div>
             <div v-html="content" v-if="done"></div>
