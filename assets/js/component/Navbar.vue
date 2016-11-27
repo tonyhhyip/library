@@ -65,7 +65,6 @@
   import nav from '../../data/nav.json';
   export default{
     data() {
-      console.log(this.$route);
       const name = this.$route.name;
       if (name in nav) {
         return {navs: nav[name], name}
