@@ -8,8 +8,9 @@ module.exports = function (url, component) {
       return response.text();
     })
     .then((content) => {
-      const title = content.match(/###([^#]+)/);
-      component.content = marked(content.replace(/^###[^#]+/, ''));
+      const regexp = /###\s+(.+)/;
+      const title = content.match(regexp);
+      component.content = marked(content.replace(regexp, ''));
       component.title = title && title.length > 1 ? title[1].trim() : '';
       component.done = true;
     })
