@@ -16,7 +16,8 @@
   const files = {
     'aim': 'Aim',
     'about': 'About',
-    'rule': 'Rule'
+    'rule': 'Rule',
+    'opening': 'Opening'
   };
 
   export default{

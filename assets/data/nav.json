@@ -1,6 +1,8 @@
 {
   "intro": [
     {"name": "aim", "display": "Aim"},
-    {"name": "rule", "display": "Rule"}
+    {"name": "rule", "display": "Rule"},
+    {"name": "about", "display": "About Us"},
+    {"name": "opening", "display": "Opening Hours"}
   ]
 }

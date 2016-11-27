@@ -36,8 +36,18 @@
                                         </router-link>
                                     </li>
                                     <li>
+                                        <router-link :to="{name: 'intro', params: {section: 'about'}}">
+                                            About Us
+                                        </router-link>
+                                    </li>
+                                    <li>
                                         <router-link :to="{name: 'intro', params: {section: 'rule'}}">
                                             Rule
+                                        </router-link>
+                                    </li>
+                                    <li>
+                                        <router-link :to="{name: 'intro', params: {section: 'opening'}}">
+                                            Opening Hours
                                         </router-link>
                                     </li>
                                 </ul>
