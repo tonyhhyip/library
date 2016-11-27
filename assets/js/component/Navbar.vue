@@ -7,7 +7,7 @@
             </a>
             <ul class="right hide-on-med-and-down">
                 <li>
-                    <router-link :to="{name: 'aim'}">
+                    <router-link :to="{name: 'intro', params: {section: 'aim'}}">
                         Introduction
                     </router-link>
                 </li>
@@ -53,7 +53,7 @@
             </ul>
             <ul class="nav-tabs tabs-transparent hide-on-med-and-down" v-if="navs">
                 <li class="tab" v-for="nav in navs">
-                    <router-link active-class="active" :to="{name: nav.name}">
+                    <router-link active-class="active" :to="{name: name, params: {section: nav.name}}">
                         {{ nav.display }}
                     </router-link>
                 </li>
@@ -65,8 +65,8 @@
   import nav from '../../data/nav.json';
   export default{
     data() {
-      const path = this.$route.path.replace(/^\//, '');
-      const [name, _] = path.split('/');
+      console.log(this.$route);
+      const name = this.$route.name;
       if (name in nav) {
         return {navs: nav[name], name}
       } else {
