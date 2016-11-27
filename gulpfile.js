@@ -163,6 +163,6 @@ gulp.task('watch:js', () => {
 });
 
 gulp.task('watch', ['watch:image', 'watch:page', 'watch:css', 'watch:js']);
-gulp.task('build:dev', ['image', 'css', 'page', 'server']);
+gulp.task('build:dev', ['js', 'image', 'css', 'page', 'server']);
 gulp.task('dev', ['build:dev', 'watch']);
 gulp.task('build', ['image', 'css', 'page', 'js']);
