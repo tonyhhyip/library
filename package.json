@@ -1,7 +1,7 @@
 {
   "name": "spyc-library",
   "private": true,
-  "version": "0.0.1",
+  "version": "3.0.0",
   "description": "SPYC Library Web Page",
   "repository": {
     "url": "git+https://github.com/spyc/library",
