@@ -20,6 +20,13 @@
     'opening': 'Opening'
   };
 
+  const titles = {
+    'aim': 'Aim',
+    'about': 'Introduction',
+    'rule': 'Rule',
+    'opening': 'Opening Hours'
+  };
+
   export default{
     components: {
       Header: require('../component/Header.vue'),
@@ -33,14 +40,11 @@
       }
     },
     computed: {
-      file() {
-        return files[this.section];
-      },
       title() {
-        return `About Us - ${this.file}`
+        return `About Us - ${titles[this.section]}`
       },
       url() {
-        return `introduction/${this.file}.txt`;
+        return `introduction/${files[this.section]}.txt`;
       }
     },
     watch: {
