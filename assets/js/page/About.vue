@@ -4,61 +4,56 @@
         <main class="container">
             <row>
                 <div class="col s12">
-                    <div class="card">
-                        <div class="card-content">
-                            <loader v-if="!done" />
-                            <div class="card-title" v-if="done">{{ title }}</div>
-                            <div v-html="content" v-if="done"></div>
-                        </div>
-                    </div>
+                    <MarkdownCard :url="url" />
                 </div>
             </row>
         </main>
     </div>
 </template>
 <script>
-  import loader from '../loader';
+  const loader = require('../loader');
+
   const files = {
     'aim': 'Aim',
     'about': 'About',
     'rule': 'Rule'
   };
+
   export default{
     components: {
       Header: require('../component/Header.vue'),
       row: require('../component/Row.vue'),
-      loader: require('../component/Loader.vue')
+      MarkdownCard: require('../component/MarkdownCard.vue')
     },
     data() {
       const {section} = this.$route.params;
       return {
-        section,
-        file: files[section],
-        done: false,
-        title: '',
-        content: ''
+        section
       }
     },
     computed: {
+      file() {
+        return files[this.section];
+      },
       title() {
         return `About Us - ${this.file}`
+      },
+      url() {
+        return `introduction/${this.file}.txt`;
       }
     },
-    mounted() {
-      this.loadData();
-    },
     watch: {
-      '$route': 'loadData'
+      '$route': function () {
+        this.updateCard();
+      }
     },
     methods: {
-      loadData() {
+      updateCard() {
         const {section} = this.$route.params;
         if (!(section in files)) {
           this.$router.replace({name: 'home'});
         }
         this.section = section;
-        this.file = files[section];
-        loader(`https://spyc.github.io/library-data/introduction/${this.file}.txt`, this);
       }
     }
   }
