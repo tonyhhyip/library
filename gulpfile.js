@@ -142,7 +142,8 @@ gulp.task('watch:css', () => {
 
 gulp.task('watch:page', () => {
   return gulp.watch([
-    './assets/pages/**/*.jinja'
+    './assets/pages/**/*.jinja',
+    './assets/layouts/**/*.jinja'
   ], ['page']);
 });
 
