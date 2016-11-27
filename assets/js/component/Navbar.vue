@@ -35,29 +35,9 @@
                             <a class="collapsible-header">Introduction <i class="material-icons">arrow_drop_down</i></a>
                             <div class="collapsible-body">
                                 <ul>
-                                    <li>
-                                        <router-link :to="{name: 'intro', params: {section: 'aim'}}">
-                                            Aim
-                                        </router-link>
-                                    </li>
-                                    <li>
-                                        <router-link :to="{name: 'intro', params: {section: 'about'}}">
-                                            About Us
-                                        </router-link>
-                                    </li>
-                                    <li>
-                                        <router-link :to="{name: 'intro', params: {section: 'rule'}}">
-                                            Rule
-                                        </router-link>
-                                    </li>
-                                    <li>
-                                        <router-link :to="{name: 'intro', params: {section: 'opening'}}">
-                                            Opening Hours
-                                        </router-link>
-                                    </li>
-                                    <li>
-                                        <router-link :to="{name: 'intro', params: {section: 'librarian'}}">
-                                            Words of Librarian
+                                    <li v-for="link in nav.intro">
+                                        <router-link :to="{name: 'intro', params: {section: link.section}}">
+                                            {{ link.display }}
                                         </router-link>
                                     </li>
                                 </ul>
@@ -73,7 +53,10 @@
             </ul>
             <ul class="nav-tabs tabs-transparent hide-on-med-and-down" v-if="navs">
                 <li class="tab" v-for="nav in navs">
-                    <router-link active-class="active" :to="{name: name, params: {section: nav.name}}">
+                    <router-link v-if="'name' in nav" active-class="active" :to="{name: nav.name}">
+                        {{ nav.display }}
+                    </router-link>
+                    <router-link v-if="'section' in nav" active-class="active" :to="{name: name, params: {section: nav.section}}">
                         {{ nav.display }}
                     </router-link>
                 </li>
@@ -85,11 +68,12 @@
   import nav from '../../data/nav.json';
   export default{
     data() {
-      const name = this.$route.name;
+      const parts = this.$route.fullPath.split('/');
+      const name = parts && parts.length > 1 ? parts[1] : null;
       if (name in nav) {
-        return {navs: nav[name], name}
+        return {navs: nav[name], name, nav}
       } else {
-        return {navs: false};
+        return {navs: false, nav};
       }
     },
     mounted() {
