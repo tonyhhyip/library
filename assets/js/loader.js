@@ -19,7 +19,7 @@ module.exports = function (url, component) {
       component.title = 'Opps! Error occur!';
       component.content = 'Please check your network or any typing missing in the website.' +
         ' If you confirm no this two,' +
-        'please report it on <a href="https://github.com/spyc/library/issues/new">Github</a>' +
+        'please report it on <a href="https://github.com/spyc/library/issues/new">Github</a> ' +
         'or email to tony@opensource.hk';
       component.done = true;
     });
