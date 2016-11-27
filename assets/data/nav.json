@@ -3,6 +3,7 @@
     {"name": "aim", "display": "Aim"},
     {"name": "rule", "display": "Rule"},
     {"name": "about", "display": "About Us"},
-    {"name": "opening", "display": "Opening Hours"}
+    {"name": "opening", "display": "Opening Hours"},
+    {"name": "librarian", "display": "Word of Librarian"}
   ]
 }

@@ -12,20 +12,19 @@
 </template>
 <script>
   const loader = require('../loader');
+  const navs = require('../../data/nav.json').intro;
 
   const files = {
     'aim': 'Aim',
     'about': 'About',
     'rule': 'Rule',
-    'opening': 'Opening'
+    'opening': 'Opening',
+    'librarian': 'Librarian'
   };
 
-  const titles = {
-    'aim': 'Aim',
-    'about': 'Introduction',
-    'rule': 'Rule',
-    'opening': 'Opening Hours'
-  };
+  const titles = {};
+
+  navs.forEach((tab) => titles[tab.name] = tab.display);
 
   export default{
     components: {

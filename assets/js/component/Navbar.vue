@@ -50,6 +50,11 @@
                                             Opening Hours
                                         </router-link>
                                     </li>
+                                    <li>
+                                        <router-link :to="{name: 'intro', params: {section: 'librarian'}}">
+                                            Words of Librarian
+                                        </router-link>
+                                    </li>
                                 </ul>
                             </div>
                         </li>
