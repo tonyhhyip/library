@@ -31,6 +31,16 @@ module.exports = {
           path: 'purchase',
           component: require('./page/Purchase.vue'),
           name: 'purchase'
+        },
+        {
+          path: 'guideline',
+          component: require('./page/Guideline.vue'),
+          name: 'guideline'
+        },
+        {
+          path: 'security',
+          component: require('./page/Security.vue'),
+          name: 'security'
         }
       ]
     },

@@ -1,9 +1,14 @@
 {
   "intro": [
-    {"name": "aim", "display": "Aim"},
-    {"name": "rule", "display": "Rule"},
-    {"name": "about", "display": "About Us"},
-    {"name": "opening", "display": "Opening Hours"},
-    {"name": "librarian", "display": "Word of Librarian"}
+    {"section": "aim", "display": "Aim"},
+    {"section": "rule", "display": "Rule"},
+    {"section": "about", "display": "About Us"},
+    {"section": "opening", "display": "Opening Hours"},
+    {"section": "librarian", "display": "Word of Librarian"}
+  ],
+  "suggestion": [
+    {"name": "purchase", "display": "Purchase Suggestion"},
+    {"name": "guideline", "display": "Suggestion Guide"},
+    {"name": "security", "display": "Security Vulnerability"}
   ]
 }

@@ -2,23 +2,20 @@
     <div>
         <Header :title="title" />
         <main class="container">
-            <row>
-                <div class="col s12">
-                </div>
-            </row>
+            <router-view></router-view>
         </main>
     </div>
 </template>
 <script>
   export default{
     data(){
+      const title = require('../title')('suggestion')[this.$route.name];
       return {
-        title: `Suggestion`
+        title: `Suggestion - ${title}`
       }
     },
     components: {
-      Header: require('../component/Header.vue'),
-      row: require('../component/Row.vue')
+      Header: require('../component/Header.vue')
     }
   }
 </script>
