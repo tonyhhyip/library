@@ -14,5 +14,12 @@
   "librarian": [
     {"section": "members", "display": "Members"},
     {"section": "join", "display": "Join Us"}
+  ],
+  "service": [
+    {"section": "loan", "display": "Book Loaning Service"},
+    {"section": "collection", "display": "Library Collection"},
+    {"section": "instruction", "display": "Instruction"},
+    {"section": "readers", "display": "Readers Service"},
+    {"section": "facility", "display": "Facility"}
   ]
 }

@@ -22,6 +22,11 @@
                     </router-link>
                 </li>
                 <li>
+                    <router-link :to="{name: 'service', params: {section: 'loan'}}">
+                        Service
+                    </router-link>
+                </li>
+                <li>
                     <router-link :to="{name: 'librarian', params: {section: 'members'}}">
                         Librarian
                     </router-link>
