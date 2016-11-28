@@ -11,9 +11,6 @@
     </div>
 </template>
 <script>
-  const loader = require('../loader');
-  const navs = require('../../data/nav.json').intro;
-
   const files = {
     'aim': 'Aim',
     'about': 'About',
@@ -22,9 +19,7 @@
     'librarian': 'Librarian'
   };
 
-  const titles = {};
-
-  navs.forEach((tab) => titles[tab.name] = tab.display);
+  const titles = require('../title')('intro');
 
   export default{
     components: {
