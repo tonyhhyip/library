@@ -69,6 +69,18 @@
                             </div>
                         </li>
                         <li>
+                            <a class="collapsible-header">Service <i class="material-icons">arrow_drop_down</i></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li v-for="link in nav.service">
+                                        <router-link :to="{name: 'librarian', params: {section: link.section}}">
+                                            {{ link.display }}
+                                        </router-link>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
                             <a class="collapsible-header">Librarian <i class="material-icons">arrow_drop_down</i></a>
                             <div class="collapsible-body">
                                 <ul>
