@@ -7,15 +7,21 @@
     </div>
 </template>
 <script>
+  const titles = require('../title')('suggestion');
   export default{
     data(){
-      const title = require('../title')('suggestion')[this.$route.name];
+      const title = titles[this.$route.name];
       return {
         title: `Suggestion - ${title}`
       }
     },
     components: {
       Header: require('../component/Header.vue')
+    },
+    watch: {
+      '$route': function () {
+        this.title = `Suggestion - ${titles[this.$route.name]}`;
+      }
     }
   }
 </script>
