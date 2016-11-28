@@ -8,11 +8,16 @@ module.exports = function (url, component) {
       return response.text();
     })
     .then((content) => {
-      const regexp = /###\s+(.+)/;
-      const title = content.match(regexp);
-      component.content = marked(content.replace(regexp, ''));
+      const titleRegexp = /###\s+(.+)/;
+      const imageRegexp = /!\[([^\]]+)]\(([^)]+)\)/;
+      const title = content.match(titleRegexp);
+      const image = content.match(imageRegexp);
+      const text = content.replace(titleRegexp, '').replace(imageRegexp, '');
+      component.content = marked(text);
       component.title = title && title.length > 1 ? title[1].trim() : '';
       component.done = true;
+      component.image = image && image.length > 1 ? image[2].trim() : false;
+      component.key = image && image.length > 1 ? image[1].trim() : false;
     })
     .catch((e) => {
       console.error(e.stack);

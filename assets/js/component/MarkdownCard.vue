@@ -1,5 +1,8 @@
 <template>
     <div class="card">
+        <div v-if="image" class="card-image">
+            <img :src="image" :alt="key">
+        </div>
         <div class="card-content markdown">
             <loader v-if="!done" />
             <div class="card-title" v-if="done">{{ title }}</div>
@@ -14,7 +17,9 @@
       return {
         done: false,
         title: '',
-        content: ''
+        content: '',
+        image: '',
+        key: ''
       }
     },
     props: {

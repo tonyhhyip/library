@@ -17,6 +17,11 @@
                     </router-link>
                 </li>
                 <li>
+                    <router-link :to="{name: 'librarian', params: {section: 'members'}}">
+                        Librarian
+                    </router-link>
+                </li>
+                <li>
                     <router-link :to="{name: 'purchase'}">
                         Suggestion
                     </router-link>
@@ -27,6 +32,11 @@
                     <router-link :to="{name: 'home'}">
                         <i class="material-icons">home</i>
                         Home
+                    </router-link>
+                </li>
+                <li>
+                    <router-link :to="{name: 'books'}">
+                        Book Recommend
                     </router-link>
                 </li>
                 <li class="no-padding">
@@ -43,12 +53,31 @@
                                 </ul>
                             </div>
                         </li>
+                        <li>
+                            <a class="collapsible-header">Librarian <i class="material-icons">arrow_drop_down</i></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li v-for="link in nav.librarian">
+                                        <router-link :to="{name: 'librarian', params: {section: link.section}}">
+                                            {{ link.display }}
+                                        </router-link>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="collapsible-header">Suggestion <i class="material-icons">arrow_drop_down</i></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li v-for="link in nav.suggestion">
+                                        <router-link :to="{name: link.name}">
+                                            {{ link.display }}
+                                        </router-link>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
                     </ul>
-                </li>
-                <li>
-                    <router-link :to="{name: 'books'}">
-                        Book Recommend
-                    </router-link>
                 </li>
             </ul>
             <ul class="nav-tabs tabs-transparent hide-on-med-and-down" v-if="navs">

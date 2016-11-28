@@ -10,5 +10,9 @@
     {"name": "purchase", "display": "Purchase Suggestion"},
     {"name": "guideline", "display": "Suggestion Guide"},
     {"name": "security", "display": "Security Vulnerability"}
+  ],
+  "librarian": [
+    {"section": "members", "display": "Members"},
+    {"section": "join", "display": "Join Us"}
   ]
 }

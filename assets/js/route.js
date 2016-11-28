@@ -23,6 +23,11 @@ module.exports = {
       component: require('./page/About.vue')
     },
     {
+      path: '/librarian/:section',
+      name: 'librarian',
+      component: require('./page/Librarian.vue')
+    },
+    {
       path: '/suggestion',
       name: 'suggest',
       component: require('./page/Suggestion.vue'),
