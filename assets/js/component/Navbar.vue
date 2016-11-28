@@ -17,6 +17,11 @@
                     </router-link>
                 </li>
                 <li>
+                    <router-link :to="{name: 'booklist'}">
+                        Book List
+                    </router-link>
+                </li>
+                <li>
                     <router-link :to="{name: 'librarian', params: {section: 'members'}}">
                         Librarian
                     </router-link>
@@ -37,6 +42,11 @@
                 <li>
                     <router-link :to="{name: 'books'}">
                         Book Recommend
+                    </router-link>
+                </li>
+                <li>
+                    <router-link :to="{name: 'booklist'}">
+                        Book List
                     </router-link>
                 </li>
                 <li class="no-padding">

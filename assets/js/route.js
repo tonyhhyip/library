@@ -23,6 +23,11 @@ module.exports = {
       component: require('./page/About.vue')
     },
     {
+      path: '/booklist',
+      name: 'booklist',
+      component: require('./page/BookList.vue')
+    },
+    {
       path: '/librarian/:section',
       name: 'librarian',
       component: require('./page/Librarian.vue')
