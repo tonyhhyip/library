@@ -4,7 +4,7 @@
         <main>
             <container>
                 <row>
-                    <div class="col s12">
+                    <div class="col s12 l8">
                         <markdown-card :url="url" />
                     </div>
                 </row>
