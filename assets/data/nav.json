@@ -1,7 +1,6 @@
 {
   "intro": [
     {"section": "aim", "display": "Aim"},
-    {"section": "rule", "display": "Rule"},
     {"section": "about", "display": "About Us"},
     {"section": "opening", "display": "Opening Hours"},
     {"section": "librarian", "display": "Word of Librarian"}

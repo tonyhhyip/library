@@ -14,7 +14,6 @@
   const files = {
     'aim': 'Aim',
     'about': 'About',
-    'rule': 'Rule',
     'opening': 'Opening',
     'librarian': 'Librarian'
   };
