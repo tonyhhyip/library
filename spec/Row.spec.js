@@ -11,5 +11,5 @@ describe('Row component', () => {
 
   it('Test render function', () => {
     expect(typeof Row.render).toBe('function');
-  })
+  });
 });

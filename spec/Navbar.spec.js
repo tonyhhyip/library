@@ -3,6 +3,7 @@
 /* globals describe, it, expect */
 
 import Vue from 'vue';
+import VueRouter from 'vue-router';
 import Navbar from '../assets/js/component/Navbar.vue';
 
 describe('Navbar component', () => {
@@ -13,7 +14,7 @@ describe('Navbar component', () => {
       components: {
         Navbar
       }
-    })
+    });
   };
   it('Has mounted hook', () => {
     expect(typeof Navbar.mounted).toBe('function');
