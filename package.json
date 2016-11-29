@@ -3,6 +3,9 @@
   "private": true,
   "version": "3.1.0",
   "description": "SPYC Library Web Page",
+  "scripts": {
+    "test": "eslint ./**/*.js && karma start karma.conf.js"
+  },
   "repository": {
     "url": "git+https://github.com/spyc/library",
     "type": "git"
