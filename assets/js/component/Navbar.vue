@@ -73,7 +73,7 @@
                             <div class="collapsible-body">
                                 <ul>
                                     <li v-for="link in nav.service">
-                                        <router-link :to="{name: 'librarian', params: {section: link.section}}">
+                                        <router-link :to="{name: 'service', params: {section: link.section}}">
                                             {{ link.display }}
                                         </router-link>
                                     </li>
