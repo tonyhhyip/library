@@ -1,7 +1,7 @@
 {
   "name": "spyc-library",
   "private": true,
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "SPYC Library Web Page",
   "scripts": {
     "test": "eslint ./**/*.js && karma start karma.conf.js"
