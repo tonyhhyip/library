@@ -14,7 +14,7 @@ const router = new VueRouter(require('./route'));
 
 router.beforeEach((to, from, next) => {
   const sidenav = document.querySelector('[data-sidenav]');
-  sidenav.parentNode.removeChild(sidenav);
+  if (sidenav) sidenav.parentNode.removeChild(sidenav);
   next();
 });
 
