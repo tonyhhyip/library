@@ -24,7 +24,7 @@ addons:
 install:
   - npm install -g npm
   - npm install -g gulp karma eslint
-  - npm install
+  - npm install --dev
 
 script:
   - npm run test
