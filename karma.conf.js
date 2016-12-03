@@ -4,6 +4,8 @@ const webpack = require('./webpack.config');
 delete webpack.entry;
 delete webpack.externals;
 
+const PRODUCTION = process.env.NODE_ENV === 'production';
+
 module.exports = function(config) {
   config.set({
     webpack,
@@ -18,8 +20,8 @@ module.exports = function(config) {
     reporters: ['spec'],
     colors: true,
     browsers: ['PhantomJS'],
-    singleRun: false,
-    watch: true,
+    singleRun: PRODUCTION,
+    watch: !PRODUCTION,
     port: 9876
   });
 };

@@ -4,7 +4,8 @@
   "version": "3.1.1",
   "description": "SPYC Library Web Page",
   "scripts": {
-    "test": "eslint ./**/*.js && karma start karma.conf.js"
+    "test": "eslint ./**/*.js && karma start karma.conf.js",
+    "build": "gulp build"
   },
   "repository": {
     "url": "git+https://github.com/spyc/library",

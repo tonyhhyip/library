@@ -4,7 +4,7 @@
 
 Please install the following software:
 
-- node.js (6 or above)
+- node.js (6)
 - npm (3 or above) / yarn (0.17 or above)
 
 ## Project Structure

@@ -1,0 +1,32 @@
+language: node_js
+sudo: false
+node_js:
+  - "6"
+
+cache:
+  directories:
+    - $HOME/.npm
+
+env:
+  global:
+    - CXX=g++-4.8
+    - NODE_ENV=production
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
+
+install:
+  - npm install -g npm
+  - npm install -g gulp
+  - npm install
+
+script:
+  - npm run test
+  - npm run build
+
+after_success:
+  - bash deploy.sh
