@@ -23,6 +23,8 @@ git fetch && git reset origin/gh-pages
 
 touch .
 
+git checkout -- README.md
+
 git add -A .
 git commit -m "Build of ${rev}"
-git push -u origin gh-pages
+git push -q origin HEAD:gh-pages
