@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Header :title="title" />
+        <Header />
         <main class="container">
             <row>
                 <div class="col s12">
@@ -16,8 +16,6 @@
     'members': 'Members'
   };
 
-  const titles = require('../title')('librarian');
-
   export default{
     components: {
       Header: require('../component/Header.vue'),
@@ -31,9 +29,6 @@
       }
     },
     computed: {
-      title() {
-        return `Librarian - ${titles[this.section]}`
-      },
       url() {
         return `content/${files[this.section]}.txt`;
       }

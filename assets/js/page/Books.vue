@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Header title="Book Recommend" />
+        <Header />
         <main>
             <container>
                 <loader v-if="!done" />

@@ -1,10 +1,9 @@
 <template>
     <header>
         <Navbar></Navbar>
-        <div class="parallax-container">
+        <div v-if="home" class="parallax-container">
             <div id="cover-title">
-            <h1>SPYC Library</h1>
-            <h2 v-if="title">{{ title }}</h2>
+                <h1>SPYC Library</h1>
             </div>
             <div class="parallax"><img :src="src"></div>
         </div>
@@ -13,17 +12,18 @@
 <script>
   import Navbar from './Navbar.vue'
   export default{
-    props: ['title'],
     components:{
       Navbar
     },
     data() {
       return {
-        src: './images/cover.jpg'
+        src: './images/cover.jpg',
+        home: this.$route.name === 'home'
       }
     },
     mounted: function () {
-      $('.parallax').parallax();
+      if (this.home)
+        $('.parallax').parallax();
     }
   }
 </script>

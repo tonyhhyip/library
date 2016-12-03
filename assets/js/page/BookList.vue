@@ -1,6 +1,6 @@
 <template>
     <div>
-        <top title="Book Lists" />
+        <top />
         <main>
             <container>
                 <row>

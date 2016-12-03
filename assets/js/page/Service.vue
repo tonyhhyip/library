@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Header :title="title" />
+        <Header />
         <main class="container">
             <row>
                 <div class="col s12">
@@ -19,8 +19,6 @@
     loan: 'Loan'
   };
 
-  const titles = require('../title')('service');
-
   export default{
     components: {
       Header: require('../component/Header.vue'),
@@ -34,9 +32,6 @@
       }
     },
     computed: {
-      title() {
-        return `Service - ${titles[this.section]}`
-      },
       url() {
         return `content/${files[this.section]}.txt`;
       }
