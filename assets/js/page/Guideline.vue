@@ -1,7 +1,7 @@
 <template>
     <row>
         <div class="col s12">
-            <MarkdownCard url="content/Suggestion.txt" />
+            <markdown-card url="content/Suggestion.txt" />
         </div>
     </row>
 </template>
@@ -9,7 +9,7 @@
   export default{
     components: {
       row: require('../component/Row.vue'),
-      MarkdownCard: require('../component/MarkdownCard.vue')
+      'markdown-card': require('../component/MarkdownCard.vue')
     }
   }
 </script>

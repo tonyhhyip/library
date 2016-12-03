@@ -1,10 +1,10 @@
 <template>
     <div>
-        <Header />
+        <top />
         <main class="container">
             <row>
                 <div class="col s12">
-                    <MarkdownCard :url="url" />
+                    <markdown-card :url="url" />
                 </div>
             </row>
         </main>
@@ -20,9 +20,9 @@
 
   export default{
     components: {
-      Header: require('../component/Header.vue'),
+      top: require('../component/Header.vue'),
       row: require('../component/Row.vue'),
-      MarkdownCard: require('../component/MarkdownCard.vue')
+      'markdown-card': require('../component/MarkdownCard.vue')
     },
     data() {
       const {section} = this.$route.params;

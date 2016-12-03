@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Header />
+        <top />
         <main>
             <container>
                 <row>
@@ -20,7 +20,7 @@
       }
     },
     components: {
-      Header: require('../component/Header.vue'),
+      top: require('../component/Header.vue'),
       container: require('../component/Container.vue'),
       row: require('../component/Row.vue'),
       'markdown-card': require('../component/MarkdownCard.vue')

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Header />
+        <top />
         <main class="container">
             <router-view></router-view>
         </main>
@@ -9,7 +9,7 @@
 <script>
   export default{
     components: {
-      Header: require('../component/Header.vue')
+      top: require('../component/Header.vue')
     }
   }
 </script>

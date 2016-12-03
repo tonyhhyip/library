@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Header></Header>
+        <top />
         <main>
             <container>
                 <row>
@@ -15,7 +15,7 @@
 <script>
   export default{
     components:{
-      Header: require('../component/Header.vue'),
+      top: require('../component/Header.vue'),
       container: require('../component/Container.vue'),
       row: require('../component/Row.vue')
     }

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Header />
+        <top />
         <main>
             <container>
                 <loader v-if="!done" />
@@ -51,7 +51,7 @@
       }
     },
     components: {
-      Header: require('../component/Header.vue'),
+      top: require('../component/Header.vue'),
       container: require('../component/Container.vue'),
       row: require('../component/Row.vue'),
       loader: require('../component/Loader.vue')
