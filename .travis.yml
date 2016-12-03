@@ -1,32 +1,27 @@
 language: node_js
 sudo: false
 node_js:
-  - "6"
-
+- '6'
 cache:
   directories:
-    - $HOME/.npm
-
+  - "$HOME/.npm"
 env:
   global:
-    - CXX=g++-4.8
-    - NODE_ENV=production
-
+  - CXX=g++-4.8
+  - NODE_ENV=production
+  - secure: e2fQteNKSHaVv5LPh9BeLcf0u4asvWk7AT0Yhpm32FBysW2rbL3l3aPrbY+CoNa+yQ0p5tq9h+jK19v4FbEYmFZFj4dgVSu6uBIUQ/6p1Muzn29E5p4mH9TW4uZ++nJ+Vqul+XAVVrO/E+RlD1POBQVWryjipnMsah53yfWBqEFRyZsb2eTuCxQ3/+x9cywZIBK3ZYi1CkwRNN+ryNAFo1Vcx3goDy0kTtzohW8kUunN+6heAeTTr2JT0lwoWvHxngIprl2D0GA5cRZY7cGAZI5LVih9dHDKIlAqllveGq61FN8g4sqVXmU3xcvz/L3f3cL1OESWqX31Lh2zO7vLcdlyVvbSNH7acllJAdWYHYzNIm0k1+9rUS5Fp49rGXgjMiIvPXdoQqO3s9/JWNYJRSm3IvbKH4/NUSUKAAyR/p93fMpCYmWHzRCygf896PLV9+V9Y5vQsmdpLhPgsSRjVgkCug6g1bUdYvv1wJ11NWUV3DhYIAcs4OGMfQEKOV8uGjvqWjUcb8S2mGZZov2T7jrxoE8DFYjy/1IFxJl8sjicKTtumsYFX+gIfLQ+KpSDbKBavF+S83yXHZeemf8ml8/6oTySRDfRfjjgN+SejolBWdfmHTs94QfN+Pi2+cjXdBEV0WLZ9FYJAhkIm8QLc1IcLMhzTPTC9YRxVQl6TCI=
 addons:
   apt:
     sources:
-      - ubuntu-toolchain-r-test
+    - ubuntu-toolchain-r-test
     packages:
-      - g++-4.8
-
+    - g++-4.8
 install:
-  - npm install -g npm
-  - npm install -g gulp
-  - npm install
-
+- npm install -g npm
+- npm install -g gulp
+- npm install
 script:
-  - npm run test
-  - npm run build
-
+- npm run test
+- npm run build
 after_success:
-  - bash deploy.sh
+- bash deploy.sh
