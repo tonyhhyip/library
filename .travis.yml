@@ -22,13 +22,12 @@ addons:
       - g++-4.8
 
 install:
-  - npm install -g npm
-  - npm install -g gulp karma eslint
-  - npm install --dev
+  - yarn global add gulp karma eslint
+  - yarn install
 
 script:
-  - npm run test
-  - npm run build
+  - yarn build
+  - yarn test
 
 after_success:
   - bash deploy.sh
