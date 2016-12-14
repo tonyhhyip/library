@@ -4,9 +4,7 @@ sudo: false
 
 node_js:
   - '6'
-cache:
-  directories:
-  - "$HOME/.npm"
+cache: yarn
 
 env:
   global:
@@ -20,10 +18,6 @@ addons:
       - ubuntu-toolchain-r-test
     packages:
       - g++-4.8
-
-install:
-  - yarn global add gulp karma eslint
-  - yarn install
 
 script:
   - yarn build
