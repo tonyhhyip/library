@@ -25,6 +25,7 @@ addons:
 
 install:
   - yarn add global gulp karma eslint
+  - yarn install
 
 script:
   - yarn build
