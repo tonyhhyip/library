@@ -22,7 +22,7 @@ module.exports = {
   },
   output: {
     path: `${__dirname}/public/js`,
-    publicPath: '/js',
+    publicPath: '/library/js',
     filename: '[name].js'
   },
   resolve: {
