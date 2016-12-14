@@ -1,7 +1,6 @@
 'use strict';
-require.ensure(['marked'], function () {
-  const marked = require('marked');
-  module.exports = function (url, component) {
+define('loader', ['marked'], function (marked) {
+  const load = function (url, component) {
     component.$http.get(url)
       .then((response) => {
         return response.text();
@@ -28,4 +27,5 @@ require.ensure(['marked'], function () {
         component.done = true;
       });
   };
+  return load;
 });

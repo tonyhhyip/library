@@ -2,6 +2,7 @@ parserOptions:
     sourceType: module
     emcaVersion: 6
 env:
+    amd: true
     es6: true
     node: true
     browser: true
