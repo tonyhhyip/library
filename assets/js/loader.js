@@ -1,5 +1,9 @@
 'use strict';
 define('loader', ['marked'], function (marked) {
+  const renderer = new marked.Renderer();
+  const tags = {'&': '&amp;', '>': '&gt;', '<': '&lt;'};
+  renderer.html = (html) => html.repalce(/[<>&]/g, (tag) => tags[tag] || tag);
+  marked.setOptions({renderer});
   const load = function (url, component) {
     component.$http.get(url)
       .then((response) => {
