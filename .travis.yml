@@ -23,7 +23,7 @@ addons:
       - g++-4.8
 
 install:
-  - yarn add global gulp karma eslint
+  - yarn add global gulp karma eslint flow-bin
   - yarn install
 
 script:
