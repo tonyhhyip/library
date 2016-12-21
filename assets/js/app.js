@@ -11,7 +11,7 @@ require.ensure(['vue', 'vue-router', 'vue-resource'], function () {
   Vue.use(VueResource);
 
   const router = new VueRouter(require('./route'));
-
+  /* globals Route */
   router.beforeEach((to: Route, from: Route, next: Function) => {
     const sidenav: Element | null = document.querySelector('[data-sidenav]');
     if (sidenav && sidenav.parentNode) sidenav.parentNode.removeChild(sidenav);
