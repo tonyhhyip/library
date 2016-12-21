@@ -1,7 +1,7 @@
 {
   "name": "spyc-library",
   "private": true,
-  "version": "3.1.1",
+  "version": "3.1.5",
   "description": "SPYC Library Web Page",
   "scripts": {
     "test": "eslint ./**/*.js && karma start karma.conf.js",
@@ -14,11 +14,16 @@
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.20.0",
+    "babel-eslint": "^7.1.1",
     "babel-loader": "^6.2.9",
+    "babel-plugin-syntax-flow": "^6.18.0",
+    "babel-plugin-transform-class-properties": "^6.19.0",
+    "babel-plugin-transform-flow-strip-types": "^6.21.0",
     "babel-preset-es2015": "^6.18.0",
     "css-loader": "^0.26.1",
     "eslint": "^3.12.1",
     "file-loader": "^0.9.0",
+    "flow-bin": "^0.37.4",
     "function-bind": "^1.1.0",
     "gulp": "^3.9.1",
     "gulp-clean-css": "^2.3.0",

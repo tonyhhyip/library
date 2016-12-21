@@ -1,0 +1,11 @@
+[ignore]
+.*/node_modules/.*
+
+[include]
+
+[libs]
+declare
+
+[options]
+module.name_mapper='.*\(.json\)' -> 'JsonModule'
+module.name_mapper='.*\(.vue\)' -> 'VueModule'

@@ -5,7 +5,7 @@
             <container>
                 <row>
                     <div class="col s12">
-                        <iframe src="http://library.pyc.edu.hk/WebOPAC.exe"></iframe>
+                        <iframe src="https://library-spyc-edu-hk.tonyhhyip.me/WebOPAC.exe"></iframe>
                     </div>
                 </row>
             </container>
