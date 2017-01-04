@@ -4,7 +4,7 @@
   "version": "3.1.5",
   "description": "SPYC Library Web Page",
   "scripts": {
-    "test": "eslint ./**/*.js && karma start karma.conf.js",
+    "test": "flow check && eslint ./**/*.js && karma start karma.conf.js",
     "build": "gulp build"
   },
   "repository": {
@@ -35,7 +35,7 @@
     "gulp-util": "^3.0.7",
     "jasmine": "^2.5.2",
     "jasmine-core": "^2.5.2",
-    "jasmine-spec-reporter": "^2.7.0",
+    "jasmine-spec-reporter": "^3.0.0",
     "json-loader": "^0.5.4",
     "karma": "^1.3.0",
     "karma-coverage": "^1.1.1",
@@ -49,7 +49,7 @@
     "vue-template-compiler": "^2.1.6",
     "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2",
-    "webpack-merge": "^1.1.1"
+    "webpack-merge": "^2.0.0"
   },
   "dependencies": {
     "marked": "^0.3.6",
@@ -57,10 +57,5 @@
     "vue-resource": "^1.0.3",
     "vue-router": "^2.1.1",
     "vuex": "^2.0.0"
-  },
-  "babel": {
-    "presets": [
-      "es2015"
-    ]
   }
 }
