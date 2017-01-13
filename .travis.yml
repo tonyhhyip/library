@@ -24,6 +24,7 @@ addons:
 install:
   - yarn add global gulp karma eslint flow-bin
   - yarn install
+  - yarn clean
 
 script:
   - export NODE_ENV=production
