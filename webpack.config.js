@@ -1,12 +1,11 @@
+//@flow
 'use strict';
 
-const UglifyPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
 const OccurenceOrderPlugin = require('webpack/lib/optimize/OccurrenceOrderPlugin');
 const DedupePlugin = require('webpack/lib/optimize/DedupePlugin');
 
 module.exports = {
   plugins: [
-    new UglifyPlugin({minimize: true}),
     new OccurenceOrderPlugin(),
     new DedupePlugin()
   ],
@@ -18,7 +17,7 @@ module.exports = {
   },
   devtool: 'source-map',
   entry: {
-    app: './assets/js/app'
+    app: ['./assets/js/app']
   },
   output: {
     path: `${__dirname}/public/js`,
@@ -34,7 +33,6 @@ module.exports = {
   },
   module: {
     loaders: [
-
       {
         test: /\.vue$/,
         loader: 'vue',
