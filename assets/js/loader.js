@@ -1,15 +1,15 @@
-//@flow
 'use strict';
 const marked = require('marked');
+const axios = require('axios');
 
 const renderer = new marked.Renderer();
 const tags = {'&': '&amp;', '>': '&gt;', '<': '&lt;'};
 renderer.html = (html) => html.repalce(/[<>&]/g, (tag) => tags[tag] || tag);
 marked.setOptions({renderer});
 module.exports = function (url: string, component: any) {
-  component.$http.get(url)
+  axios.get(url)
     .then((response) => {
-      return response.text();
+      return response.data;
     })
     .then((content: string) => {
       const titleRegexp = /###\s+(.+)/;

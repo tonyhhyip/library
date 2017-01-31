@@ -3,15 +3,27 @@
 
 const OccurenceOrderPlugin = require('webpack/lib/optimize/OccurrenceOrderPlugin');
 const DedupePlugin = require('webpack/lib/optimize/DedupePlugin');
+const OfflinePlugin = require('offline-plugin');
 
 module.exports = {
   plugins: [
     new OccurenceOrderPlugin(),
-    new DedupePlugin()
+    new DedupePlugin(),
+    new OfflinePlugin({
+      caches: {
+        main: [
+          ':rest:',
+          './app.min.css',
+          './',
+          './images/cover.jpg',
+          './images/pyc.gif'
+        ]
+      },
+      publicPath: '/'
+    })
   ],
   externals: {
     vue: 'Vue',
-    'vue-resource': 'VueResource',
     'vue-router': 'VueRouter',
     marked: 'marked'
   },
@@ -20,8 +32,8 @@ module.exports = {
     app: ['./assets/js/app']
   },
   output: {
-    path: `${__dirname}/public/js`,
-    publicPath: './js/',
+    path: `${__dirname}/public`,
+    publicPath: './',
     filename: '[name].js',
   },
   resolve: {

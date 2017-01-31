@@ -27,6 +27,7 @@
     </div>
 </template>
 <script>
+  import axios from 'axios';
   import parser from '../parser';
   export default{
     data(){
@@ -64,10 +65,10 @@
       const self = this;
       for (let language in lists) {
         const file = lists[language];
-        self.$http.get(file)
+        axios.get(file)
           .then(function (response) {
             self.done = true;
-            return response.text();
+            return response.data;
           })
           .then(function (content) {
             self[language] = parser(content);

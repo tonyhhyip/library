@@ -1,6 +1,6 @@
 <template>
     <header>
-        <Navbar></Navbar>
+        <Navbar />
         <div v-if="home" class="parallax-container">
             <div id="cover-title">
                 <h1>SPYC Library</h1>

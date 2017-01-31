@@ -1,7 +1,7 @@
 //@flow
 'use strict';
 
-module.exports = function (content: string): Array<Object> {
+module.exports = function (content: string) {
   const lines = content.split('\n');
   const data = [];
   const title = parseLine(lines.shift());
@@ -15,7 +15,7 @@ module.exports = function (content: string): Array<Object> {
   return data;
 };
 
-function parseLine(line: string): Array<string> {
+function parseLine(line: string) {
   return line.split('\t').map((content) => {
     return content.trim();
   });
