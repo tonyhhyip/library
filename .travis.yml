@@ -4,7 +4,10 @@ sudo: false
 
 node_js:
   - '6'
-cache: yarn
+cache:
+  yarn: true
+  directories:
+    - $HOME/.npm
 
 env:
   global:
