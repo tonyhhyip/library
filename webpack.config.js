@@ -48,7 +48,8 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue',
-        exclude: /node_modules/
+        exclude: /node_modules/,
+
       },
       {
         test: /\.js$/,

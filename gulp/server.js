@@ -10,9 +10,8 @@ const HotModuleReplacementPlugin = require('webpack/lib/HotModuleReplacementPlug
 
 const config = require('../webpack.config');
 
-
 gulp.task('server', () => {
-  const devConfig = merge.smart(config, {
+  const devConfig = merge.smart({
     entry: {
       app: [
         'webpack-dev-server/client?http://localhost:8080/'
@@ -21,7 +20,7 @@ gulp.task('server', () => {
     plugins: [
       new HotModuleReplacementPlugin()
     ]
-  });
+  }, config);
 
   const compiler = webpack(devConfig);
   compiler.plugin('done', (stats) => {

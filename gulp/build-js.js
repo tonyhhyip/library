@@ -9,7 +9,7 @@ const merge = require('webpack-merge');
 const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
 const config = require('../webpack.config');
 
-gulp.task('js', (cb) => {
+gulp.task('build:js', (cb) => {
   const productionConfig = merge.smart({
     plugins: [
       new UglifyJsPlugin({compress: true})
